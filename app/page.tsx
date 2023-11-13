@@ -1,3 +1,5 @@
+"use client"
+
 import Catlog from '@/components/Catlog'
 import Hero from '@/components/Hero'
 

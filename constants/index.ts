@@ -7,27 +7,29 @@ export const NAV_LINKS = [
 
   export const FOOTER_LINKS = [
     {
-      title: 'Learn More',
-      links: [
-        'About Hilink',
-        'Press Releases',
-        'Environment',
-        'Jobs',
-        'Privacy Policy',
-        'Contact Us',
-      ],
+      title: 'Discover',
+      links: ['About Us', 'Our Fleet', 'Locations', 'Testimonials'],
     },
     {
-      title: 'Our Community',
-      links: ['Climbing xixixi', 'Hiking hilink', 'Hilink kinthill'],
+      title: 'Services',
+      links: ['Car Rentals', 'Airport Transfers', 'Corporate Packages'],
+    },
+    {
+      title: 'Help & Support',
+      links: ['FAQs', 'Terms of Service', 'Contact Us', '24/7 Customer Support'],
+    },
+    {
+      title: 'Join Our Community',
+      links: ['Travel Tips', 'Customer Stories', 'Exclusive Offers'],
     },
   ];
   
   export const FOOTER_CONTACT_INFO = {
     title: 'Contact Us',
     links: [
-      { label: 'Admin Officer', value: '123-456-7890' },
-      { label: 'Email Officer', value: 'hilink@akinthil.com' },
+      { label: 'Customer Support', value: '123-456-7890' },
+      { label: 'Email', value: 'info@cruisewheels.com' },
+      { label: 'Visit Us', value: '123 Car Street, Cityville, Country' },
     ],
   };
   
