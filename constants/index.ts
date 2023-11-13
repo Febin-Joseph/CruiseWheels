@@ -11,12 +11,12 @@ export const NAV_LINKS = [
       links: ['About Us', 'Our Fleet', 'Locations', 'Testimonials'],
     },
     {
-      title: 'Services',
-      links: ['Car Rentals', 'Airport Transfers', 'Corporate Packages'],
-    },
-    {
       title: 'Help & Support',
       links: ['FAQs', 'Terms of Service', 'Contact Us', '24/7 Customer Support'],
+    },
+    {
+      title: 'Services',
+      links: ['Car Rentals', 'Airport Transfers', 'Corporate Packages'],
     },
     {
       title: 'Join Our Community',
