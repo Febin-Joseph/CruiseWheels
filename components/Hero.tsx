@@ -5,7 +5,7 @@ import Button from './Button'
 const Hero = () => {
     return (
         <section className='max-container padding-container flex flex-col gap-20 
-                        py-2 pb-32 md:gap-28 lg:py-8 lg:flex-row'>
+                        py-2 pb-32 md:gap-28 lg:py-8 lg:flex-row lg:mb-2'>
             <div className='hero-map' />
 
             <div className='relative z-20 flex flex-1 flex-col xl:w-1/2'>
