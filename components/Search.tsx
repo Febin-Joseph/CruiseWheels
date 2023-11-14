@@ -2,7 +2,7 @@ import React from 'react';
 
 const Search = () => {
   return (
-    <div className='max-container padding-container flex flex-col py-5 pb-24 flexCenter'>
+    <div className='max-container padding-container flex flex-col py-5 pb-7 flexCenter'>
       <h2 className='text-gray-50 bold-32 mb-3'>Let's Search Your Need!</h2>
       <div className='flex justify-center m-2 bg-gray-100 px-10 p-5 rounded-full mt-3 border-gray-10 hover:border-gray-400 border-2'>
         <svg
@@ -22,11 +22,11 @@ const Search = () => {
           <input
             type="text"
             placeholder='Location'
-            className='flex-1 bg-transparent outline-none text-gray-500 w-full'
+            className='flex-1 bg-transparent outline-none text-black w-full regular-18'
           />
           <input
             type="date"
-            className='bg-transparent outline-none text-gray-400'
+            className='bg-transparent outline-none text-gray-400 regular-18'
           />
         </div>
       </div>
