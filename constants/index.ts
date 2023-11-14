@@ -19,7 +19,7 @@ export const NAV_LINKS = [
       links: ['Car Rentals', 'Airport Transfers', 'Corporate Packages'],
     },
     {
-      title: 'Join Our Community',
+      title: 'Community',
       links: ['Travel Tips', 'Customer Stories', 'Exclusive Offers'],
     },
   ];
