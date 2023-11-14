@@ -10,15 +10,15 @@ const Catlog = () => {
       </p>
 
       <div className='flex flex-row flexEnd xs:gap-1 md:gap-3 lg:gap-5 -mt-20 md:-mt-20'>
-        <div className="dropdown flex">
+        <div className="dropdown dropdown-end">
           <label tabIndex={0} className="btn m-1">Price</label>
           <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
             <li><a>Min to Max</a></li>
-            <li><a>Max To Min</a></li>
+            <li><a>Max to Min</a></li>
           </ul>
         </div>
 
-        <div className="dropdown flex">
+        <div className="dropdown dropdown-end">
           <label tabIndex={0} className="btn m-1">Manufacter</label>
           <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
             <li><a>Benz</a></li>
