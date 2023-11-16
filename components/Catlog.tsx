@@ -4,7 +4,7 @@ import Card from './Card'
 const Catlog = (props: any) => {
 
   return (
-    <section className='max-container padding-container py-5 pb-10'>
+    <section className='max-container padding-container py-5 pb-20'>
       <h2 className='bold-32 md:w-full lg:w-full'>Garage</h2>
       <p className='regular-16 text-gray-30 mt-1'>
         Explore Our Garage For Your
