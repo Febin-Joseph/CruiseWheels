@@ -26,6 +26,7 @@ const Search = () => {
           />
           <input
             type="date"
+            placeholder='Date'
             className='bg-transparent outline-none text-gray-400 regular-18'
           />
         </div>

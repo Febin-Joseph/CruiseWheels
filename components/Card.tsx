@@ -26,7 +26,7 @@ const Card = (props: any) => {
                         </h2>
                     </div>
 
-                    <div className="flex flex-row gap-6 justify-center items-center mt-4 pt-10">
+                    <div className="flex flex-row gap-6 justify-center items-center mt-4 pt-10 group-hover:hidden">
                         <div className="text-center text-gray-500">
                             <MdAirlineSeatReclineExtra className="w-full text-[22px] mb-2" />
                             <h2 className="text-[15px]">{seat} Seats</h2>
