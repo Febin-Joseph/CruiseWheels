@@ -1,13 +1,15 @@
 import React from 'react'
+import Card from './Card'
 
-const Catlog = () => {
+const Catlog = (props: any) => {
+
   return (
-    <section className='max-container padding-container py-5 pb-52'>
-        <h2 className='bold-32 md:w-full lg:w-full'>Garage</h2>
-        <p className='regular-16 text-gray-30 mt-1'>
-          Explore Our Garage For Your
-          <span className='text-red-500 bold-20 hover:text-black'> Ride...</span>
-        </p>
+    <section className='max-container padding-container py-5 pb-10'>
+      <h2 className='bold-32 md:w-full lg:w-full'>Garage</h2>
+      <p className='regular-16 text-gray-30 mt-1'>
+        Explore Our Garage For Your
+        <span className='text-red-500 bold-20 hover:text-black'> Ride...</span>
+      </p>
 
       <div className='flex flex-row flexEnd xs:gap-1 md:gap-3 lg:gap-5 -mt-20 md:-mt-20'>
         <div className="dropdown dropdown-end">
@@ -27,6 +29,16 @@ const Catlog = () => {
             <li><a>Bentley</a></li>
           </ul>
         </div>
+      </div>
+
+      <div className='mt-10'>
+        {props.carsList.map((car: any, index: number) => (
+          <div>
+            <Card
+              car={car}
+            />
+          </div>
+        ))}
       </div>
 
     </section>
