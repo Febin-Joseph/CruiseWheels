@@ -2,9 +2,9 @@ import React from 'react';
 
 const Search = () => {
   return (
-    <div className='max-container padding-container flex flex-col py-5 pb-7 flexCenter'>
+    <section className='max-container padding-container flex flex-col py-5 pb-7 flex-center justify-center items-center'>
       <h2 className='text-gray-50 bold-32 mb-3'>Let's Search Your Need!</h2>
-      <div className='flex justify-center m-2 bg-gray-100 px-10 p-5 rounded-full mt-3 border-gray-10 hover:border-gray-400 border-2'>
+      <div className='max-w-[530px] flex justify-center m-2 bg-gray-100 px-10 p-5 rounded-full mt-3 border-gray-10 hover:border-gray-400 border-2'>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -18,11 +18,11 @@ const Search = () => {
           />
         </svg>
 
-        <div className='flex flex-row w-full'>
+        <div className='flex flex-col md:flex-row w-full'>
           <input
             type="text"
             placeholder='Location'
-            className='flex-1 bg-transparent outline-none text-black w-full regular-18'
+            className='flex-1 bg-transparent outline-none text-black w-full regular-18 mb-2 md:mb-0 md:mr-2'
           />
           <input
             type="date"
@@ -30,7 +30,7 @@ const Search = () => {
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
