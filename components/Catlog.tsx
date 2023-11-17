@@ -55,7 +55,7 @@ const Catalog = (props: any) => {
         </div>
 
         <div className="dropdown dropdown-end">
-          <label tabIndex={0} className="btn m-1">Manufacturer</label>
+          <label tabIndex={0} className="btn m-1">Brand</label>
           <ul tabIndex={0} className="dropdown-content z-30 menu p-2 shadow bg-base-100 rounded-box w-52">
             {brandList && brandList.map((brand: string, index: number) => (
               <li key={index}><a onClick={() => filterCars(brand)}>{brand}</a></li>
