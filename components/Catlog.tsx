@@ -1,7 +1,41 @@
-import React from 'react'
-import Card from './Card'
+import React, { useEffect, useState } from 'react';
+import Card from './Card';
 
-const Catlog = (props: any) => {
+const Catalog = (props: any) => {
+  const [brandList, setBrandList] = useState<string[]>([]);
+  const [filteredCars, setFilteredCars] = useState<any[]>([]);
+  const [selectedBrand, setSelectedBrand] = useState<string | null>(null);
+  const [carsByBrand, setCarsByBrand] = useState<Record<string, any[]>>({});
+
+  useEffect(() => {
+    const brands = Object.keys(carsByBrand);
+    setBrandList(brands);
+  }, [carsByBrand]);
+
+  const carsFilter = () => {
+    const carsByBrandMap: Record<string, any[]> = {};
+
+    props.carsList.forEach((car: any) => {
+      if (!carsByBrandMap[car.carBrand]) {
+        carsByBrandMap[car.carBrand] = [];
+      }
+      carsByBrandMap[car.carBrand].push(car);
+    });
+
+    setCarsByBrand(carsByBrandMap);
+  };
+
+  const filterCars = (brand: string) => {
+    const filteredList = carsByBrand[brand] || [];
+    setFilteredCars(filteredList);
+    setSelectedBrand(brand);
+  };
+
+  useEffect(() => {
+    if (props.carsList) {
+      carsFilter();
+    }
+  }, [props.carsList]);
 
   return (
     <section className='max-container padding-container py-5 pb-20'>
@@ -21,26 +55,32 @@ const Catlog = (props: any) => {
         </div>
 
         <div className="dropdown dropdown-end">
-          <label tabIndex={0} className="btn m-1">Manufacter</label>
+          <label tabIndex={0} className="btn m-1">Manufacturer</label>
           <ul tabIndex={0} className="dropdown-content z-30 menu p-2 shadow bg-base-100 rounded-box w-52">
-            <li><a>Ferrari</a></li>
-            <li><a>Porsche</a></li>
-            <li><a>Jaguar</a></li>
-            <li><a>Bentley</a></li>
+            {brandList && brandList.map((brand: string, index: number) => (
+              <li key={index}><a onClick={() => filterCars(brand)}>{brand}</a></li>
+            ))}
           </ul>
         </div>
       </div>
 
-      <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 3xl:grid-cols-5 4xl:grid-cols-6 gap-4">
-        {props.carsList.map((car: any, index: number) => (
-          <div key={index}>
-            <Card car={car} />
-          </div>
-        ))}
+      <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 3xl:grid-cols-5 gap-4">
+        {selectedBrand ? (
+          filteredCars.map((car: any, index: number) => (
+            <div key={index}>
+              <Card car={car} />
+            </div>
+          ))
+        ) : (
+          props.carsList.map((car: any, index: number) => (
+            <div key={index}>
+              <Card car={car} />
+            </div>
+          ))
+        )}
       </div>
-
     </section>
-  )
-}
+  );
+};
 
-export default Catlog
+export default Catalog;
