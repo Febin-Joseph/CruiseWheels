@@ -47,7 +47,7 @@ const Card = (props: any) => {
                             <Button
                                 type='button'
                                 title='Rent Now'
-                                variant='bg-gradient-to-r from-red-400 via-red-500 to-red-800 text-white h-[50px] rounded-[10px] w-[200px]'
+                                variant='bg-gradient-to-r from-red-400 via-red-500 to-red-800 text-white h-[50px] rounded-[3px] md:rounded-[10px] w-[200px]'
                             />
                         </div>
                     </div>
