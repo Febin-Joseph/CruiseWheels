@@ -23,7 +23,7 @@ const Catlog = (props: any) => {
         <div className="dropdown dropdown-end">
           <label tabIndex={0} className="btn m-1">Manufacter</label>
           <ul tabIndex={0} className="dropdown-content z-30 menu p-2 shadow bg-base-100 rounded-box w-52">
-            <li><a>Benz</a></li>
+            <li><a>Ferrari</a></li>
             <li><a>Porsche</a></li>
             <li><a>Jaguar</a></li>
             <li><a>Bentley</a></li>
@@ -31,7 +31,7 @@ const Catlog = (props: any) => {
         </div>
       </div>
 
-      <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 3xl:grid-cols-5 4xl:grid-cols-6 gap-4">
         {props.carsList.map((car: any, index: number) => (
           <div key={index}>
             <Card car={car} />
