@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import Link from "next/link";
+import { createBooking, getLocationList } from "@/services";
 
 const Form = ({ car, onClose, setIsModalOpen }: any) => {
     const [storeLocation, setStoreLocation] = useState<any>([]);
     const [formValue, setFormValue] = useState({
         location: '',
         pickUpDate: '',
+        email: '',
         dropOffDate: '',
         pickUpTime: '',
         dropOffTime: '',
@@ -37,6 +38,20 @@ const Form = ({ car, onClose, setIsModalOpen }: any) => {
         });
     }
 
+    const handleSubmit = async () => {
+        const response: any = await createBooking(formValue)
+        handleClose();
+    }
+
+    useEffect(() => {
+        locations();
+    }, [])
+
+    const locations = async () => {
+        const response: any = await getLocationList();
+        setStoreLocation(response?.locations)
+    }
+
     return (
         <div>
             <div>
@@ -49,19 +64,9 @@ const Form = ({ car, onClose, setIsModalOpen }: any) => {
                         <option disabled selected>
                             PickUp Location?
                         </option>
-                        <option>
-                            Kuruppampady, Perumbavoor
-                        </option>
-                        <option>
-                            Kochi, Ernamkulam
-                        </option>
-                        <option>
-                            Palakkad, Shornur
-                        </option>
-                        {storeLocation &&
-                            storeLocation.map((loc: any, index: number) => (
-                                <option key={index}>{loc?.address}</option>
-                            ))}
+                        {storeLocation?.map((location: any, index: number) => (
+                            <option key={index}>{location.address}</option>
+                        ))}
                     </select>
                 </div>
                 <div className="flex flec-col gap-5 mb-5">
@@ -127,14 +132,12 @@ const Form = ({ car, onClose, setIsModalOpen }: any) => {
                         Close
                     </button>
 
-                    <Link href="/">
-                        <button
-                            className="btn bg-blue-500 text-white hover:bg-blue-800"
-                            onClick={handleClose}
-                        >
-                            Save
-                        </button>
-                    </Link>
+                    <button
+                        className="btn bg-blue-500 text-white hover:bg-blue-800"
+                        onClick={handleSubmit}
+                    >
+                        Save
+                    </button>
                 </div>
 
             </div>
