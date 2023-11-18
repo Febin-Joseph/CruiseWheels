@@ -1,23 +1,36 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { MdAirlineSeatReclineExtra } from 'react-icons/md';
 import { PiSteeringWheelFill } from 'react-icons/pi';
 import { FaGasPump } from 'react-icons/fa';
 import Button from './Button';
+import Modal from './Modal';
 
 const Card = (props: any) => {
-    const [isModalOpen, setIsModalOpen] = useState<Boolean>(true);
+    const [isModalOpen, setIsModalOpen] = useState<Boolean>(false);
+    const [selectedCar, setSelectedCar] = useState<any | null>(null);
+
     const { name, price, image, seat, carType, carAvg } = props.car;
 
+    useEffect(() => {
+        if (isModalOpen) {
+            (document as any).getElementById('my_modal_4').showModal();
+        }
+    }, [isModalOpen]);
+
     const handleCardClick = () => {
-        (document as any).getElementById('my_modal_4').showModal();
+        setSelectedCar(props.car)
         setIsModalOpen(true);
     };
 
     const handleRentNowClick = () => {
-        (document as any).getElementById('my_modal_4').showModal();
+        setSelectedCar(props.car)
         setIsModalOpen(true);
     }
+
+    const handleModalClose = () => {
+        setSelectedCar(null);
+    };
 
     return (
         <div className="w-[280px] min-h-[350px] mx-auto md:w-[320px] lg:w-full lg:flex mt-10 relative">
@@ -72,18 +85,11 @@ const Card = (props: any) => {
             </div>
 
             {isModalOpen && (
-                <dialog id="my_modal_4" className="modal">
-                    <div className="modal-box w-11/12 max-w-5xl">
-                        <h3 className="font-bold text-lg">Hello!</h3>
-                        <p className="py-4">Click the button below to close</p>
-                        <div className="modal-action">
-                            <form method="dialog">
-                                {/* if there is a button, it will close the modal */}
-                                <button className="btn">Close</button>
-                            </form>
-                        </div>
-                    </div>
-                </dialog>
+                <Modal
+                    car={selectedCar}
+                    onClose={handleModalClose}
+                    setIsModalOpen={setIsModalOpen}
+                />
             )}
         </div>
     );

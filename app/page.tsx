@@ -17,7 +17,8 @@ export default function Home() {
   const getCarList = async () => {
     try {
       const result: any = await getCarsList();
-      setCarsList(result?.carLists);
+      setCarsList(result.carLists);
+
     } catch (error) {
       console.error('Error fetching data:', error);
     } finally {
